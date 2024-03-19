@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Persegi Panjang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::after,
+      *::before {
+        font-family: "JetBrains Mono", monospace;
+        outline: none;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        color: black;
+        background: white;
+      }
+      main {
+        max-width: 540px;
+        width: 100%;
+        margin: 24px auto 0px auto;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        padding: 0;
+        margin: 0 24px 24px 24px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 0;
+        margin: 24px 0;
+      }
+      .form-input {
+        display: flex;
+        flex-direction: column;
+        padding: 0 24px;
+        margin-bottom: 12px;
+      }
+      .form-result {
+        padding: 0 24px;
+      }
+      label {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      input {
+        display: block;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 2px solid black;
+      }
+      button {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 8px 12px;
+        border: none;
+        background: #333;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+     <h1>Kalkulator Persegi Panjang</h1>
+     <div class="form-input">
+       <label for="panjang">Input Panjang: </label>
+       <input id="panjang" type="number" value="0" />
+     </div>
+     <div class="form-input">
+       <label for="lebar">Input Lebar: </label>
+       <input id="lebar" type="number" value="0" />
+     </div>
+     <div class="form-input">
+       <button id="hitung">Hitung</button>
+     </div>
+
+     <div class="form-result">
+       <h2 id="hasil">Hasil: 0</h2>
+     </div>
+    </main>
+    <script>
+    const tombolHitung = document.querySelector("#hitung")
+    const outputHasil = document.querySelector("#hasil")
+    
+    tombolHitung.addEventListener("click", () => {
+      const inputPanjang = document.querySelector("#panjang").value
+      const inputLebar = document.querySelector("#lebar").value
+  
+      if (inputPanjang == "" || inputLebar == "") {
+        alert("Mohon isi panjang dan lebar!")
+        return
+      }
+  
+      const hasil = inputPanjang * inputLebar
+      outputHasil.textContent = "Hasil: " + hasil
+   })
+    </script>
+  </body>
+</html>
